@@ -1,0 +1,8 @@
+streamlit
+streamlit-extras
+pandas
+requests
+pyperclip
+openpyxl
+openai==0.28.1
+dotenv

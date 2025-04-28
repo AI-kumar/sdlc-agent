@@ -1,0 +1,75 @@
+
+.my-contanier {
+    background-color: #f0f2f6;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.custom-title {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: red;
+    z-index: 999;
+    text-align: center;
+    font-family: monospace;
+}
+
+.stApp > header {
+    background-color: transparent;
+}
+
+[data-testid="stBaseButton-secondary"] button{
+    border: solid .1em red;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    padding: 5px 15px;
+    
+}
+
+[data-testid="stBaseButton-secondary"] button:hover{
+    background-color: white;    
+    border: solid .2em red;
+    border-radius: 10px;
+    color: red;
+}
+
+
+[data-testid="stDownloadButton"] button{
+    border: 1px solid red;
+}
+
+[data-testid="stExpander"]{
+    background-color: lightgrey;
+}
+
+[data-testid="stExpander"] [data-testid="stMarkdownContainer"] strong {
+    font-size: 18px;
+}
+
+.right-aligned {
+    text-align: right;
+    padding-bottom: 12px;
+}
+
+.stSidebar {
+    border: 3px solid red;
+    background-color: rgb(224, 246, 253);
+}
+
+/* Resize sidebar */
+[data-testid="stSidebar"]{
+    width: 50vw !important;
+}
+
+div[data-testid="stDialog"] div[role="dialog"]:has(div:contains("User Confirmation")) {
+    width: 35vw;
+    height: 20vh; 
+}
+
+div[data-testid="stDialog"] div[role="dialog"]:has(div:contains("authenticate")) {
+    width: 35vw;
+    height: 60vh; 
+}
