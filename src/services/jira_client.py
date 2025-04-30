@@ -58,8 +58,8 @@ class JiraClient:
         
         issue_type_query = ", ".join([f'"{type}"' for type in issues_types])
         jql = f"issuetype in ({issue_type_query}) order by updated DESC"
-
-        url = f"{self.base_url}/rest/api/2/search"
+        print(f"JQL Query: {jql}")
+        url = f"{self.base_url}/rest/api/3/search"
         start_at = 0
         all_issue_keys = []
         max_results = st.session_state.jira_ids_max_results

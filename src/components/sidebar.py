@@ -49,7 +49,7 @@ def sidebar_display(jira):
                 if st.session_state.selected_input_type == "Jira ID":
                      
                     if "jira_ids_all" not in st.session_state:
-                        st.session_state.jira_ids_all = jira.get_accessible_issues(['Issue', 'Story'])
+                        st.session_state.jira_ids_all = jira.get_accessible_issues(["Story", "Task", "Bug"])
                     if "jira_selected" not in st.session_state:
                         st.session_state.jira_selected = []
                     

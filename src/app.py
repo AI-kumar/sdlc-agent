@@ -168,14 +168,14 @@ def escape_jira_formatting(text: str):
 
 def update_jira_issue(headers,jira_id, agent_title, agent_description):
         """Update the Jira issue with the refined title and description."""
-        issue_url = f"{JIRA_ENDPOINT}rest/api/2/issue/{jira_id}"
+        issue_url = f"{JIRA_ENDPOINT}rest/api/3/issue/{jira_id}"
         parsed = parse_rewritten_content(agent_description)
 
         payload = {
             "fields": {
                 "summary": parsed["title"],
                 "description": escape_jira_formatting(parsed["description"]),
-                "customfield_12077": escape_jira_formatting(parsed["acceptance_criteria"]),
+                #"customfield_12077": escape_jira_formatting(parsed["acceptance_criteria"]),
                 #"customfield_12078": parsed["priority"],
                 #"customfield_12079": parsed["estimated_effort"]
 
@@ -188,6 +188,8 @@ def update_jira_issue(headers,jira_id, agent_title, agent_description):
             return response.status_code,success_msg
         else:
             print(f"Failed to update issue ({response.status_code}): {response.text}")
+            error_msg = f"Failed to update issue ({response.status_code}): {response.text}"
+            return response.status_code, error_msg
 
 if st.session_state.jira_auth_popup_actioned:
     #Display header
